@@ -69,16 +69,16 @@ struct csv_data {
 
   friend std ::ostream &operator<<(std::ostream &os, const csv_data &data) {
     os << std::setprecision(7);
-    // os << data.w << ",";
-    // os << data.q2 << ",";
-    // os << data.w_had << ",";
+     os << data.w << ",";
+     os << data.q2 << ",";
+     os << data.w_had << ",";
     // // os << data.w_diff << ",";
-    // // os << data.sf << ",";
+     os << data.sf << ",";
     // // os << std::setprecision(10);
     // // os << data.elec_prime_m2 << ",";
     // // os << data.elec_m2 << ",";
     // // os << data.elec_energy_rec << ",";
-    // // os << data.elec_mom_rec << ",";
+     os << data.elec_mom_rec << ",";
     // // os << data.elec_theta_rec << ",";
     // // os << data.elec_phi_rec << ",";
     // os << std::setprecision(8);
@@ -92,8 +92,8 @@ struct csv_data {
     // os << data.energy_x_mu << ",";
     // os << data.mom_x_mu << ",";
 
-    os << data.w_mc << ",";
-    os << data.q2_mc << ",";
+    // os << data.w_mc << ",";
+    // os << data.q2_mc << ",";
 
     // os << data.gen_elec_E << ",";
     // os << data.gen_elec_mom << ",";
