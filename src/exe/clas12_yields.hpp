@@ -75,7 +75,7 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
     auto dt = std::make_shared<Delta_T>(data);
     auto cuts = std::make_shared<uconn_Cuts>(data);
     // auto cuts = std::make_shared<rga_Cuts>(data);
-     // if (!cuts->ElectronCuts()) continue;// you have to comment out for generated one
+    // if (!cuts->ElectronCuts()) continue;// you have to comment out for generated one
 
     // Make a reaction class from the data given
     auto event = std::make_shared<Reaction>(data, beam_energy);
@@ -165,23 +165,23 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
      output.w_mc = mc_event->W_mc();
      output.q2_mc = mc_event->Q2_mc();
 
-             //output.sf = (data->ec_tot_energy(0) / (event->elec_mom()));
+            // output.sf = (data->ec_tot_energy(0) / (event->elec_mom()));
     // output.gen_elec_E = mc_event->elec_E_mc_gen();
-     // output.gen_elec_mom = mc_event->elec_mom_mc_gen();
-    //         output.gen_elec_theta = (mc_event->elec_theta_mc_gen());
-    //         output.gen_elec_phi = (mc_event->elec_phi_mc_gen());
+             output.gen_elec_mom = mc_event->elec_mom_mc_gen();
+             output.gen_elec_theta = (mc_event->elec_theta_mc_gen());
+             output.gen_elec_phi = (mc_event->elec_phi_mc_gen());
 
-    //         output.gen_prot_mom = (mc_event->prot_mom_mc_gen());
-    //         output.gen_prot_theta = (mc_event->prot_theta_mc_gen());
-    //         output.gen_prot_phi = (mc_event->prot_phi_mc_gen());
+             output.gen_prot_mom = (mc_event->prot_mom_mc_gen());
+             output.gen_prot_theta = (mc_event->prot_theta_mc_gen());
+             output.gen_prot_phi = (mc_event->prot_phi_mc_gen());
 
-    //         output.gen_pip_mom = (mc_event->pip_mom_mc_gen());
-    //         output.gen_pip_theta = (mc_event->pip_theta_mc_gen());
-    //         output.gen_pip_phi = (mc_event->pip_phi_mc_gen());
+             output.gen_pip_mom = (mc_event->pip_mom_mc_gen());
+             output.gen_pip_theta = (mc_event->pip_theta_mc_gen());
+             output.gen_pip_phi = (mc_event->pip_phi_mc_gen());
 
-    //         output.gen_pim_mom = (mc_event->pim_mom_mc_gen());
-    //         output.gen_pim_theta = (mc_event->pim_theta_mc_gen());
-    //         output.gen_pim_phi = (mc_event->pim_phi_mc_gen());
+             output.gen_pim_mom = (mc_event->pim_mom_mc_gen());
+             output.gen_pim_theta = (mc_event->pim_theta_mc_gen());
+             output.gen_pim_phi = (mc_event->pim_phi_mc_gen());
 
      output.weight_gen = mc_event->weight();
 
@@ -192,6 +192,6 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
  // std::cout << "Percent = " << 100.0 * total / num_of_events << std::endl;
   // Return the total number of events
  // return num_of_events;
-// }
+ // }
 #endif
 
