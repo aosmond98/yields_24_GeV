@@ -88,7 +88,7 @@ struct csv_data {
      os << data.w_mc << ",";
      os << data.q2_mc << ",";
 
-    // os << data.gen_elec_E << ",";
+     // os << data.gen_elec_E << ",";
      os << data.gen_elec_mom << ",";
      os << data.gen_elec_theta<< ",";
      os << data.gen_elec_phi << ",";
@@ -104,7 +104,7 @@ struct csv_data {
      os << data.gen_pim_mom << ",";
      os << data.gen_pim_theta << ",";
      os << data.gen_pim_phi<< ",";
-    // os << std::setprecision(8);
+     // os << std::setprecision(8);
 
      os << data.weight_gen<< ",";
 
