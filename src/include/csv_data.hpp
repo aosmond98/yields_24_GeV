@@ -55,7 +55,7 @@ struct csv_data {
     // 24 GeV test
     // return
 
-    return "w_mc,q2_mc,weight";
+    return "w,q2,weight";
 
 
   }
