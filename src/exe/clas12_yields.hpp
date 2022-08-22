@@ -167,21 +167,21 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
 
              // output.sf = (data->ec_tot_energy(0) / (event->elec_mom()));
              // output.gen_elec_E = mc_event->elec_E_mc_gen();
-             output.gen_elec_mom = mc_event->elec_mom_mc_gen();
-             output.gen_elec_theta = (mc_event->elec_theta_mc_gen());
-             output.gen_elec_phi = (mc_event->elec_phi_mc_gen());
+             // output.gen_elec_mom = mc_event->elec_mom_mc_gen();
+             // output.gen_elec_theta = (mc_event->elec_theta_mc_gen());
+             // output.gen_elec_phi = (mc_event->elec_phi_mc_gen());
 
-             output.gen_prot_mom = (mc_event->prot_mom_mc_gen());
-             output.gen_prot_theta = (mc_event->prot_theta_mc_gen());
-             output.gen_prot_phi = (mc_event->prot_phi_mc_gen());
+             // output.gen_prot_mom = (mc_event->prot_mom_mc_gen());
+             // output.gen_prot_theta = (mc_event->prot_theta_mc_gen());
+             // output.gen_prot_phi = (mc_event->prot_phi_mc_gen());
 
-             output.gen_pip_mom = (mc_event->pip_mom_mc_gen());
-             output.gen_pip_theta = (mc_event->pip_theta_mc_gen());
-             output.gen_pip_phi = (mc_event->pip_phi_mc_gen());
+             // output.gen_pip_mom = (mc_event->pip_mom_mc_gen());
+             // output.gen_pip_theta = (mc_event->pip_theta_mc_gen());
+             // output.gen_pip_phi = (mc_event->pip_phi_mc_gen());
 
-             output.gen_pim_mom = (mc_event->pim_mom_mc_gen());
-             output.gen_pim_theta = (mc_event->pim_theta_mc_gen());
-             output.gen_pim_phi = (mc_event->pim_phi_mc_gen());
+             // output.gen_pim_mom = (mc_event->pim_mom_mc_gen());
+             // output.gen_pim_theta = (mc_event->pim_theta_mc_gen());
+             // output.gen_pim_phi = (mc_event->pim_phi_mc_gen());
 
              output.weight_gen = mc_event->weight();
 

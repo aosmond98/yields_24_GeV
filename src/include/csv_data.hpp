@@ -55,7 +55,7 @@ struct csv_data {
     // 24 GeV test
     // return
 
-    return "w_mc,q2_mc,elec_mom_gen,elec_th_gen,elec_phi_gen,prot_mom_gen,prot_th_gen,prot_phi_gen,pip_mom_gen,pip_th_gen,pip_phi_gen,pim_mom_gen,pim_th_gen,pim_phi_gen,weight";
+    return "w_mc,q2_mc,weight";
 
 
   }
@@ -89,21 +89,21 @@ struct csv_data {
      os << data.q2_mc << ",";
 
      // os << data.gen_elec_E << ",";
-     os << data.gen_elec_mom << ",";
-     os << data.gen_elec_theta<< ",";
-     os << data.gen_elec_phi << ",";
+     // os << data.gen_elec_mom << ",";
+     // os << data.gen_elec_theta<< ",";
+     // os << data.gen_elec_phi << ",";
 
-     os << data.gen_prot_mom << ",";
-     os << data.gen_prot_theta << ",";
-     os << data.gen_prot_phi << ",";
+     // os << data.gen_prot_mom << ",";
+     // os << data.gen_prot_theta << ",";
+     // os << data.gen_prot_phi << ",";
 
-     os << data.gen_pip_mom << ",";
-     os << data.gen_pip_theta << ",";
-     os << data.gen_pip_phi <<",";
+     // os << data.gen_pip_mom << ",";
+     // os << data.gen_pip_theta << ",";
+     // os << data.gen_pip_phi <<",";
 
-     os << data.gen_pim_mom << ",";
-     os << data.gen_pim_theta << ",";
-     os << data.gen_pim_phi<< ",";
+     // os << data.gen_pim_mom << ",";
+     // os << data.gen_pim_theta << ",";
+     // os << data.gen_pim_phi<< ",";
      // os << std::setprecision(8);
 
      os << data.weight_gen<< ",";
