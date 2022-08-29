@@ -16,11 +16,11 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
   // Get the number of events in this thread
   size_t num_of_events = (int)_chain->GetEntries();
 
-  float beam_energy = 10.6;
+  float beam_energy = 24.0; // change for 24.0
   if (std::is_same<CutType, rga_Cuts>::value) {
-    beam_energy = 10.6;
+    beam_energy = 24.0;
   } else if (std::is_same<CutType, uconn_Cuts>::value) {
-    beam_energy = 10.6;
+    beam_energy = 24.0;
   }
 
   if (getenv("BEAM_E") != NULL) beam_energy = atof(getenv("BEAM_E"));
@@ -75,7 +75,7 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
     auto dt = std::make_shared<Delta_T>(data);
     auto cuts = std::make_shared<uconn_Cuts>(data);
     // auto cuts = std::make_shared<rga_Cuts>(data);
-     if (!cuts->ElectronCuts()) continue;// you have to comment out for generated one
+    // if (!cuts->ElectronCuts()) continue;// you have to comment out for generated one
 
     // Make a reaction class from the data given
     auto event = std::make_shared<Reaction>(data, beam_energy);
@@ -106,7 +106,7 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
     // if (event->TwoPion_missingPim()) {
     // if (event->TwoPion_missingPip()) {
     // if (event->TwoPion_missingProt()) {
-     if (event->TwoPion_exclusive()) { // comment out for generated one
+    // if (event->TwoPion_exclusive()) { // comment out for generated one
     // if (event->W() > 1.25 && event->W() < 2.55 && event->Q2() > 1.5 && event->Q2() < 10.5){
     // && abs(event->MM2_exclusive()) < 0.03 && abs(event->Energy_excl()) < 0.3) {
     //   //&&
@@ -115,8 +115,8 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
     csv_data output;
 
     // // // /// 1) reconstructed  and rec exclusive
-             output.w = event->W();
-             output.q2 = event->Q2();
+            // output.w = event->W();
+            // output.q2 = event->Q2();
             // output.w_had = event->w_hadron();
             // // output.w_diff = event->w_difference();
             // output.sf = (data->ec_tot_energy(0) / (event->elec_mom()));
@@ -126,7 +126,7 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
             // output.elec_mom_rec = (event->elec_mom());
     //         // output.elec_theta_rec = (event->elec_theta());
     //         // output.elec_phi_rec = (event->elec_phi());
-             output.weight_rec = event->weight();
+            // output.weight_rec = event->weight();
 
     // // //         // output.status_Elec =  abs(data->status(0));
     // // //         // output.status_Pim = statusPim;
@@ -162,8 +162,8 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
     // // //         // output.weight_exclusive = event->weight();
 
     // // // // // //  3) for generated
-             // output.w_mc = mc_event->W_mc();
-             // output.q2_mc = mc_event->Q2_mc();
+              output.w_mc = mc_event->W_mc();
+              output.q2_mc = mc_event->Q2_mc();
 
              // output.sf = (data->ec_tot_energy(0) / (event->elec_mom()));
              // output.gen_elec_E = mc_event->elec_E_mc_gen();
@@ -183,7 +183,7 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
              // output.gen_pim_theta = (mc_event->pim_theta_mc_gen());
              // output.gen_pim_phi = (mc_event->pim_phi_mc_gen());
 
-             // output.weight_gen = mc_event->weight();
+              output.weight_gen = mc_event->weight();
 
     _sync->write(output);
     // }
@@ -192,6 +192,6 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
  // std::cout << "Percent = " << 100.0 * total / num_of_events << std::endl;
   // Return the total number of events
  // return num_of_events;
-  }
+ // }
 #endif
 
