@@ -16,7 +16,7 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
   // Get the number of events in this thread
   size_t num_of_events = (int)_chain->GetEntries();
 
-  float beam_energy = 24.0; // change for 24.0
+  float beam_energy = 24.0; // change this for 24.0 
   if (std::is_same<CutType, rga_Cuts>::value) {
     beam_energy = 24.0;
   } else if (std::is_same<CutType, uconn_Cuts>::value) {
@@ -109,6 +109,7 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
     // if (event->TwoPion_exclusive()) { // comment out for generated one
     // if (event->W() > 1.25 && event->W() < 2.55 && event->Q2() > 1.5 && event->Q2() < 10.5){
     // && abs(event->MM2_exclusive()) < 0.03 && abs(event->Energy_excl()) < 0.3) {
+     if (mc_event->W_mc() > 1.25 && mc_event->W_mc() < 2.55 && mc_event->Q2_mc() > 1.5 && mc_event->Q2_mc() < 30) { //added from email from krishna
     //   //&&
     //   // abs(event->MM2_exclusive()) < 0.03) {
     //   // total++;
@@ -188,7 +189,7 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
     _sync->write(output);
      }
    }
-  // }
+   }
  // std::cout << "Percent = " << 100.0 * total / num_of_events << std::endl;
   // Return the total number of events
  // return num_of_events;
