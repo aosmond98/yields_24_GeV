@@ -62,7 +62,7 @@ struct csv_data {
 
   friend std ::ostream &operator<<(std::ostream &os, const csv_data &data) {
     // os << std::setprecision(7);
-    //  os << data.w << ",";
+    // os << data.w << ",";
     //  os << data.q2 << ",";
      // os << data.w_had << ",";
     // // os << data.w_diff << ",";
