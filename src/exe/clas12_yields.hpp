@@ -194,6 +194,6 @@ size_t run(std::shared_ptr<TChain> _chain, const std::shared_ptr<SyncFile>& _syn
  // std::cout << "Percent = " << 100.0 * total / num_of_events << std::endl;
   // Return the total number of events
  // return num_of_events;
-  }
+ // }
 #endif
 
