@@ -55,15 +55,15 @@ struct csv_data {
     // 24 GeV test
     // return
 
-    return "w,q2,weight";
+    return "w_mc,q2_mc,weight";
 
 
   }
 
   friend std ::ostream &operator<<(std::ostream &os, const csv_data &data) {
     // os << std::setprecision(7);
-     os << data.w << ",";
-      os << data.q2 << ",";
+    // os << data.w << ",";
+    // os << data.q2 << ",";
      // os << data.w_had << ",";
     // // os << data.w_diff << ",";
     // os << data.sf << ",";
@@ -75,7 +75,7 @@ struct csv_data {
     // // os << data.elec_theta_rec << ",";
     // // os << data.elec_phi_rec << ",";
     // os << std::setprecision(8);
-      os << data.weight_rec << ",";
+    //  os << data.weight_rec << ",";
     // os << std::setprecision(7);
     // // // os << data.status_Elec << ",";
     // // // os << data.status_Pim << ",";
@@ -85,8 +85,8 @@ struct csv_data {
     // os << data.energy_x_mu << ",";
     // os << data.mom_x_mu << ",";
 
-     // os << data.w_mc << ",";
-     // os << data.q2_mc << ",";
+      os << data.w_mc << ",";
+      os << data.q2_mc << ",";
 
      // os << data.gen_elec_E << ",";
      // os << data.gen_elec_mom << ",";
@@ -106,7 +106,7 @@ struct csv_data {
      // os << data.gen_pim_phi<< ",";
      // os << std::setprecision(8);
 
-     // os << data.weight_gen<< ",";
+      os << data.weight_gen<< ",";
 
     return os;
   }
